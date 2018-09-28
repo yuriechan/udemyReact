@@ -9,7 +9,8 @@ state = {
     {name: 'amy', age: 28},
     {name: 'alex', age: 29},
     {name: 'stephanie', age:30}
-  ]
+  ],
+  showPersons: false
 }
 
 switchNameHandler = (newName) => {
@@ -33,6 +34,10 @@ nameChangedHandler = (event) => {
   )
 }
 
+togglePersonHandler = () => {
+
+}
+
   render() {
     //inline style
     const style = {
@@ -48,20 +53,22 @@ nameChangedHandler = (event) => {
       <h1>hey</h1>
       <button
       style = {style}
-      onClick = {this.switchNameHandler.bind(this, 'AMY')}>Switch Name!</button>
-      <div>
-      <Person
-      name = {this.state.persons[0].name}
-      age = {this.state.persons[0].age}
-      changed = {this.nameChangedHandler} />
-      <Person
-      name = {this.state.persons[1].name}
-      age = {this.state.persons[1].age}
-      click = {this.switchNameHandler}>My hobbies: tennis</Person>
-      <Person
-      name = {this.state.persons[2].name}
-      age = {this.state.persons[2].age}/>
-      </div>
+      onClick = {this.togglePersonsHandler}>Switch Name!</button>
+      {if () {
+        <div>
+        <Person
+        name = {this.state.persons[0].name}
+        age = {this.state.persons[0].age}
+        changed = {this.nameChangedHandler} />
+        <Person
+        name = {this.state.persons[1].name}
+        age = {this.state.persons[1].age}
+        click = {this.switchNameHandler}>My hobbies: tennis</Person>
+        <Person
+        name = {this.state.persons[2].name}
+        age = {this.state.persons[2].age}/>
+        </div>
+      }}
       </div>
 
       //React.createElement('div',{className: 'App'},React.createElement('h1',null,'HELLO'))
